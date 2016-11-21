@@ -1,26 +1,25 @@
-def fibonacci_numbers(num)
-  return num if num <= 1
-  fibs = [1,2]
-  i = fibs.length
+def fibonaccis(num)
+  a = b = 1
+  next_fib = 0
+  fibs = []
 
-  nextFib = fibs[i - 2] + fibs[i - 1]
-
-  while nextFib < num do
-    fibs << nextFib
-    i = fibs.length
-    nextFib = fibs[i - 2] + fibs[i - 1]
+  while b < num do
+    fibs << b
+    next_fib = a + b
+    a = b
+    b = next_fib
   end
 
   fibs
 end
 
-def even_fibonacci_numbers(num)
-  fibonacci_numbers(num).select { |n| n % 2 == 0 }
+def even_fibonaccis(num)
+  fibonaccis(num).select { |n| n % 2 == 0 }
 end
 
-def sum_even_fibonacci_numbers(num)
-  even_fibonacci_numbers(num).reduce(:+)
+def sum_even_fibonaccis(num)
+  even_fibonaccis(num).reduce(:+)
 end
 
 
-puts sum_even_fibonacci_numbers(4000000)
+puts sum_even_fibonaccis(4000000)
