@@ -1,5 +1,5 @@
 require 'test/unit'
-require_relative '../2-even_fibonaccis.rb'
+require_relative '../solutions/2-even_fibonaccis.rb'
 
 class EvenFibonacciTests < Test::Unit::TestCase
   def test_sum_even_fibonacci_numbers
